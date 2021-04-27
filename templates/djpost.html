@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>CMS</title>
+</head>
+<body>
+	<h1 align="center"> CMS </h1>
+    <form method='post' action="/djpost">
+        {% csrf_token %}
+        <p align="center">帳號 : <input type='text' name='username' /></p>
+        <p align="center">密碼 : <input type='password' name='password' /></p>
+        <p align="center"><button type='submit'>確定</button></p>
+       
+    </form>
+</body> 
+</html>

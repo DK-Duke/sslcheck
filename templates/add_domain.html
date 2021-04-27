@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>添加domain</title>
+</head>
+<body>
+    <form method='post' action="/djpost">
+        {% csrf_token %}
+        <p>Domain：<input type='text' name='domain_name' /></p>
+        <p><button type='submit'>確定</button></p>
+    </form>
+</body>
+</html>

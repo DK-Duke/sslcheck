@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Domain SSL list</title>
+</head>
+<body>
+	<h1 align="center"> Domain SSL List </h1>
+	    <form method='post' action="/grab3">
+        {% csrf_token %}
+        <p>新增 : <input type='text' name='cName' /></p>
+        <p>用途 : <input type='text' name='usefor' /></p>
+        <p><button type='submit'>確定</button></p>
+
+    </form>
+
+    <a href="/post1/"><button type='submit'>ADD</button></a>
+    <a href="/grab/"><button type='submit'>GRAB</button></a>
+    <p></p>
+
+    <table border="1" style="solid-color: black" cellpadding="0" cellspacing="0" width="70%">
+        <tr>
+
+            <th>Domain</th>
+            <th>Usefor</th>
+            <th>Startdate</th>
+            <th>Enddate</th>
+            <th>Limit</th>
+            <th>OP</th>
+        </tr>
+        {% for myapp in myapps %}
+        <tr>
+
+            <td>{{myapp.cName}}</td>
+            <td>{{myapp.usefor}}</td>
+            <td>{{myapp.startdate}}</td>
+            <td>{{myapp.enddate}}</td>
+            <td>{{myapp.limit}} days</td>
+            <td>
+                <a href="/delete/{{myapp.id}}/">删除</a>
+
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+
+
+</body>
+</html>

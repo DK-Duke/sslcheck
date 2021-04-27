@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADD Domain</title>
+</head>
+<body>
+<form action="." method="POST" name="form1">
+    {% csrf_token %}
+    <table border="1" cellspacing="1" cellpadding="4">
+      <tr>
+          <th>域名</th><td ><input type="text" id="cName" name="cName"/></td>
+      </tr>
+
+      <tr>
+          <th>用途</th><td ><input type="text" id="usefor" name="usefor"/></td>
+      </tr>
+
+      <tr>
+          <th>startdate</th><td ><input type="text" id="startdate" name="startdate"/></td>
+      </tr>
+
+      <tr>
+          <th>enddate</th><td ><input type="text" id="enddate" name="enddate"/></td>
+      </tr>
+
+      <tr>
+          <th>limit</th><td ><input type="text" id="limit" name="limit"/></td>
+      </tr>
+
+      <tr>
+        <th colspan="2" align="center">
+          <input type="submit" name="button" id="button" value="送出">
+          <input type="reset" name="button2" id="button2" value="重設"></th>
+      </tr>
+    </table>
+    <span style="color:red">{{message}}</span>
+  </form>
+</body>
+</html>
